@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>歯車・軸の設計手順</title>
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.85;color:#253244;background:#f4f6f9;margin:0;padding:36px 16px}main{max-width:960px;background:white;margin:auto;padding:48px 58px;border:1px solid #e1e7ef;border-radius:14px;box-shadow:0 6px 24px #152b4010}h1{font-size:2rem;border-bottom:3px solid #3867b2;padding-bottom:12px}h2{font-size:1.5rem;margin-top:42px;padding:8px 0;border-bottom:1px solid #c7d4e5}h3{font-size:1.2rem;margin-top:28px}img{display:block;max-width:100%;height:auto;object-fit:contain;margin:18px 0 24px;border-radius:4px}table{width:100%;border-collapse:collapse;margin:20px 0}td,th{border:1px solid #d2dbe7;padding:9px 13px;text-align:left}th{background:#eaf0f8}a{color:#245da8;overflow-wrap:anywhere}li{margin-bottom:9px}li img{margin-left:0}@media(max-width:650px){main{padding:25px 18px}body{padding:10px}h1{font-size:1.5rem}}
+</style></head><body><main><h1>歯車・軸の設計手順</h1>
+<h2>歯車</h2>
+<h3>固定部の形状</h3>
+<p>歯車にねじ穴があけられたもの使用する。<br />
+軸に対してイモネジをとめることで締結する。</p>
+<p><img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/e3186f83-ecaf-43cd-be85-7204ea6d06c6.png" alt="設計参考図 1" width="258" />
+<img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/2ce0ebfe-7fd4-410a-b2be-ea85c2a27f5c.png" alt="設計参考図 2" width="205" />
+<img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/c6859632-6f8d-4eae-8d1a-b746ec5c7229.png" alt="設計参考図 3" width="106" />
+<img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/a773193a-fb24-4a09-9fbf-49bb5ed60494.png" alt="設計参考図 4" width="288" /></p>
+<h3>設計に必要な寸法</h3>
+<p>設計時に必要な寸法をまとめる。</p>
+<table>
+<thead>
+<tr>
+  <th>名称</th>
+  <th>記号</th>
+  <th>式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>モジュール</td>
+  <td>m</td>
+  <td>設定</td>
+</tr>
+<tr>
+  <td>歯数</td>
+  <td>z</td>
+  <td>設定</td>
+</tr>
+<tr>
+  <td>基準円直径</td>
+  <td>d</td>
+  <td>zm</td>
+</tr>
+<tr>
+  <td>歯先円直径</td>
+  <td>da</td>
+  <td>d + 2m</td>
+</tr>
+</tbody>
+</table>
+<h3>作図手順</h3>
+<ol>
+<li><p><strong>減速比の決定</strong><br />
+目標とする減速比に近くなるような減速比を決定する。<br />
+何回減速するか検討する。<br />
+歯車の枚数によって回転方向が入れ替わる。<br />
+偶数枚で出力の回転方向が反転。<br />
+奇数枚で入力と同じ向きになる。</p>
+</li>
+<li><p><strong>軸の位置の決定</strong><br />
+歯車の歯の形がわかる向きから作図する。<br />
+最低限スケッチに書かれてしかるべきもの：</p>
+<ul>
+<li>軸：回転を伝える先と関わっている</li>
+<li>基準円：これで軸同士の位置関係が決まる</li>
+<li>歯先円：これで他部品との干渉してないかの確認</li>
+</ul>
+<p>まずは軸を作図し、その軸と同心円になるように基準円、歯先円を描く。</p>
+<p><img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/fc616f87-7120-4a72-a01e-7c239e04f24f.png" alt="設計参考図 5" width="960" /></p>
+<p>横から見た図で他の部品（例えば車体フレーム）との干渉がないことを確認する。</p>
+</li>
+<li><p><strong>奥行方向の位置関係の決定</strong><br />
+軸と歯車を上から見た図を描く。<br />
+これによって歯車の奥行方向を確定させる。<br />
+一致や同一直線といった拘束を活用する。</p>
+<p><img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/ba65bb08-ae80-48e0-b877-3214ffbde241.png" alt="設計参考図 6" width="960" /></p>
+<p>ここに反映させなきゃいけない情報は歯の位置と固定部の飛び出た部分が必要。<br />
+この寸法は選んだ歯車によって決まる。</p>
+<p><img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/90f194c4-5ee1-414e-9d53-8b6950ea3be8.png" alt="設計参考図 7" width="352" /></p>
+</li>
+</ol>
+<h2>軸の固定</h2>
+<p>軸を車体と固定する必要がある。<br />
+その時に必要な要素が</p>
+<ul>
+<li>滑らかに回転させるための軸受け</li>
+<li>軸が抜けないような形状</li>
+</ul>
+<p>である。</p>
+<h3>軸受け</h3>
+<p>フランジブッシュを利用する。<br />
+滑るプラスチックであるPOM製のものを利用する。</p>
+<p><a href="https://jp.misumi-ec.com/vona2/detail/110302640340/?KWSearch=%E3%83%95%E3%83%A9%E3%83%B3%E3%82%B8%E3%81%B6%E3%81%A3%E3%81%97%E3%82%85&amp;searchFlow=results2products&amp;CategorySpec=00000229516%3A%3Aa&amp;searchCategorySpec=01&amp;variantType=20260827_pj1_n0ZJHr2WoYC5cvw_003">ミスミ：フランジブッシュ</a></p>
+<p><img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/6f607f3c-b6dc-09b0748ff629.png" alt="設計参考図 8" width="850" />
+<img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/6d27f25d-6ba6-4f3c-b6dc-09b0748ff629.png" alt="設計参考図 9" width="288" /></p>
+<h3>抜け止め　C形止め輪</h3>
+<p><a href="https://jp.misumi-ec.com/vona2/detail/110300258330/?KWSearch=C%E3%82%AF%E3%83%A9%E3%83%B3%E3%83%97+%E8%BB%B8&amp;searchFlow=results2products&amp;searchCategorySpec=00&amp;variantType=20260827_pj1_05avpwfUiglIHGq_001">ミスミ：C形止め輪</a></p>
+<p><img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/ba783603-a085-414a-8849-4ce9e6460c53.png" alt="設計参考図 10" width="220" /></p>
+<h3>作図</h3>
+<p>これらを使って回転するが抜けない軸を作る。<br />
+取り付ける板にブッシュがはまって、止め輪で軸が抜けないようにする。</p>
+<p>作図する必要があるのは</p>
+<ul>
+<li>ブッシュの外形</li>
+<li>止め輪の溝</li>
+</ul>
+<p>これで軸の寸法をすべて確定させる。</p>
+<p><img loading="lazy" src="https://img.esa.io/uploads/production/attachments/9758/2026/10/14/165719/9ed48edb-699a-4d97-ac6a-e74dda8f12b7.png" alt="設計参考図 11" width="335" /></p>
+</main></body></html>
